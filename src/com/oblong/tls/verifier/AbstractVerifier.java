@@ -25,7 +25,17 @@
  *
  */
 
-package org.apache.http.conn.ssl;
+/* This file originally came from:
+ * http://mirror.symnds.com/software/Apache//httpcomponents/httpclient/source/httpcomponents-client-4.3-beta2-src.tar.gz
+ * with the md5sum:
+ * c33bcafaf8a0ec2c82710bfb4eca17d1  httpcomponents-client-4.3-beta2-src.tar.gz
+ *
+ * Modified by Patrick Pelletier for Oblong Industries:
+ *  - changed package name
+ *  - removed logger and immutable annotation
+ */
+
+package com.oblong.tls.verifier;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,18 +56,13 @@ import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.Immutable;
-import org.apache.http.conn.util.InetAddressUtils;
-
 /**
  * Abstract base class for all standard {@link X509HostnameVerifier}
  * implementations.
  *
  * @since 4.0
  */
-@Immutable
+// @Immutable
 public abstract class AbstractVerifier implements X509HostnameVerifier {
 
     /**
@@ -78,8 +83,6 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
         // Just in case developer forgot to manually sort the array.  :-)
         Arrays.sort(BAD_COUNTRY_2LDS);
     }
-
-    private final Log log = LogFactory.getLog(getClass());
 
     public AbstractVerifier() {
         super();
@@ -378,7 +381,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
             InetAddress inetAddress = InetAddress.getByName(hostname);
             return inetAddress.getHostAddress();
         } catch (UnknownHostException uhe) { // Should not happen, because we check for IPv6 address above
-            log.error("Unexpected error converting "+hostname, uhe);
+            // log.error("Unexpected error converting "+hostname, uhe);
             return hostname;
         }
     }

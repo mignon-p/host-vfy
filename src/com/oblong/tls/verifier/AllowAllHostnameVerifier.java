@@ -25,9 +25,17 @@
  *
  */
 
-package org.apache.http.conn.ssl;
+/* This file originally came from:
+ * http://mirror.symnds.com/software/Apache//httpcomponents/httpclient/source/httpcomponents-client-4.3-beta2-src.tar.gz
+ * with the md5sum:
+ * c33bcafaf8a0ec2c82710bfb4eca17d1  httpcomponents-client-4.3-beta2-src.tar.gz
+ *
+ * Modified by Patrick Pelletier for Oblong Industries:
+ *  - changed package name
+ *  - removed immutable annotation
+ */
 
-import org.apache.http.annotation.Immutable;
+package com.oblong.tls.verifier;
 
 /**
  * The ALLOW_ALL HostnameVerifier essentially turns hostname verification
@@ -36,7 +44,7 @@ import org.apache.http.annotation.Immutable;
  *
  * @since 4.0
  */
-@Immutable
+// @Immutable
 public class AllowAllHostnameVerifier extends AbstractVerifier {
 
     public final void verify(

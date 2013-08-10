@@ -25,7 +25,16 @@
  *
  */
 
-package org.apache.http.conn.ssl;
+/* This file originally came from:
+ * http://mirror.symnds.com/software/Apache//httpcomponents/httpclient/source/httpcomponents-client-4.3-beta2-src.tar.gz
+ * with the md5sum:
+ * c33bcafaf8a0ec2c82710bfb4eca17d1  httpcomponents-client-4.3-beta2-src.tar.gz
+ *
+ * Modified by Patrick Pelletier for Oblong Industries:
+ *  - changed package name
+ */
+
+package com.oblong.tls.verifier;
 
 import java.io.IOException;
 import java.security.cert.X509Certificate;
