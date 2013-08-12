@@ -8,7 +8,7 @@ which in turn is motivated by the problem here:
 
 https://crypto.stanford.edu/~dabo/pubs/abstracts/ssl-client-bugs.html
 
-basically, my asserion is that:
+basically, my assertion is that:
 
 - there is no built-in hostname validation for JSSE when using plain
   old SSL sockets (as opposed to JSSE's HTTPS support) which is
